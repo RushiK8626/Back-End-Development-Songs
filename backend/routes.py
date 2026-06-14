@@ -70,7 +70,7 @@ def songs():
     """return all songs in the database"""
     songs = db.songs.find()
     if songs is not None:
-        return parse_json(songs), 200
+        return jsonify(parse_json(songs)), 200
     return {"message": "Internal server error"}, 500
 
 
